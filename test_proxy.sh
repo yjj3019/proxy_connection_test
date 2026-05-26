@@ -27,7 +27,7 @@ else
     echo -e "${GREEN}[+] https_proxy is set: ${https_proxy:-$HTTPS_PROXY}${NC}"
 fi
 
-# 프록시 URL에서 IP와 Port 파싱 (ex: http://30.30.30.28:9090 -> 30.30.30.28 / 9090)
+# 프록시 URL에서 IP와 Port 파싱 (ex: http://10.10.10.18:9090 -> 10.10.10.18 / 9090)
 if [ ! -z "$PROXY_URL" ]; then
     PROXY_IP=$(echo "$PROXY_URL" | sed -e 's/http:\/\///g' -e 's/https:\/\///g' | cut -d: -f1)
     PROXY_PORT=$(echo "$PROXY_URL" | sed -e 's/http:\/\///g' -e 's/https:\/\///g' | cut -d: -f2 | cut -d/ -f1)
